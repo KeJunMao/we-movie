@@ -1,0 +1,6 @@
+__pycache__
+.venv
+photos
+photos-webp
+movies.json
+.env
