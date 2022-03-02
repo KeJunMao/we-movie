@@ -65,7 +65,10 @@ class Movie:
             return '暂无简介'
 
     def getHotComment(self):
-        return self.soup.find('div', id='hot-comments').find('p').text.strip()
+        try:
+            return self.soup.find('div', id='hot-comments').find('p').text.strip()
+        except:
+            return '暂无热门评论'
 
     def getPhotoPath(self):
         return self.soup.find('div', id='mainpic').find('img')['src']
