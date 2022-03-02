@@ -68,7 +68,7 @@ class Movie:
         return self.soup.find('div', id='hot-comments').find('p').text.strip()
 
     def getPhotoPath(self):
-        return self.soup.find('img', attrs={'alt': self.title})['src']
+        return self.soup.find('div', id='mainpic').find('img')['src']
 
     def downloadPhoto(self):
         r = s.get(self.getPhotoPath())
